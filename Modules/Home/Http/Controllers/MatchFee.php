@@ -73,9 +73,11 @@ class MatchFee extends Controller
               ->bcc(['no-reply@guyanamarriagematch.com', systemInformation()->email])
               ->subject('One Match Found!');
         });
-
-        success("Congratulations, we found your match and sent you a message with the details. Please check your email and dashboard for your search result");
-        return redirect('search');
+        
+        success("Congratulations, you found a match, please check your email and your DASHBOARD for more information");
+        return response()->json([
+            'success' => true
+        ]);
     }
     
     public function cancel()

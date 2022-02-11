@@ -44,6 +44,14 @@ class RenewFee extends Controller
         ]);
 
         success("Your subscription has been renewed for 6 months!");
-        return redirect('profile');
+        return response()->json([
+            'success' => true
+        ]);
+    }
+
+    public function cancel()
+    {
+        whoops('Something went wrong! Please search again!');
+        return redirect('pay-renew-fee');
     }
 }
